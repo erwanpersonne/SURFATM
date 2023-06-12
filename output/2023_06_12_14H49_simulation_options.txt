@@ -1,0 +1,6 @@
+Rn_used_for_simulation	Hydric_stress_function	Copy_of_all_simulation_files
+0_or_1	0_or_1	0_or_1
+1	1	1
+		
+0 : calculated (need Rg and Ratm as input)	0 : with SWC	0 : no copy
+1 : measured	1 : with SWP	1 : copy of all files

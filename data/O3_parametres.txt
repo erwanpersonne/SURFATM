@@ -1,0 +1,3 @@
+kcut_O3	RH0_O3	clay_content
+[-]	[%]	[%]
+0.045	60.0	31
