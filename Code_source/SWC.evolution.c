@@ -17,6 +17,12 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with SurfAtm. If not, see <http://www.gnu.org/licenses/>.
 
+The IDDN number assigned to your deposit is: IDDN.FR.001.180010.000.S.P.2022.000.30100.
+
+The electronic certificate of your deposit is available at the following address:
+https://secure2.iddn.org/app.server/certificate/?sn=2022180010000&key=87195b4227e4c9142f5e7ff3d81c52388a1492c19ea63f08929474f4a7d4ee1d&lang=fr
+
+
 == Other Usage ==
 Other Usage means a use of SurfAtm that is inconsistent with the GPL
 license, and requires a written agreement between You, AgroParisTech and INRAe.

@@ -22,6 +22,12 @@ Other Usage means a use of SurfAtm that is inconsistent with the GPL
 license, and requires a written agreement between You, AgroParisTech and INRAe.
 Licensees for Other Usage of SurfAtm may use this file in accordance
 with the terms contained in the written agreement between You, AgroParisTech and INRAe.
+
+The IDDN number assigned to your deposit is: IDDN.FR.001.180010.000.S.P.2022.000.30100.
+
+The electronic certificate of your deposit is available at the following address:
+https://secure2.iddn.org/app.server/certificate/?sn=2022180010000&key=87195b4227e4c9142f5e7ff3d81c52388a1492c19ea63f08929474f4a7d4ee1d&lang=fr
+
 */
 /*
 @author Erwan Personne <erwan.personne@agroparistech.fr>
@@ -38,7 +44,6 @@ Montes, C., Lhomme, J.P., Demarty, J., Prévot, L., Jacob, F. (2014) A three-sou
 	SVAT modeling of evaporation: Application to the seasonal dynamics of a grassed 
 	vineyard. Agricultural and Forest Meteorology, 191, 64-80.
 
-	ESSAI 1
 */
 
 #include <stdio.h>
