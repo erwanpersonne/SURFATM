@@ -1,3 +1,33 @@
+/*
+This file is part of SurfAtm software
+Copyright(c) 2023, â€“ UMR ECOSYS, AgroParisTech INRAe, France
+
+== GNU General Public License Usage ==
+
+SurfAtm is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+SurfAtm is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with SurfAtm. If not, see <http://www.gnu.org/licenses/>.
+
+== Other Usage ==
+Other Usage means a use of SurfAtm that is inconsistent with the GPL
+license, and requires a written agreement between You, AgroParisTech and INRAe.
+Licensees for Other Usage of SurfAtm may use this file in accordance
+with the terms contained in the written agreement between You, AgroParisTech and INRAe.
+*/
+/*
+@author Erwan Personne <erwan.personne@agroparistech.fr>
+@technical support : support.surfatm@agroparistech.fr
+*/
+
 /*----------Main program of SURFATM--------
 
 It includes:
@@ -10,7 +40,7 @@ Personne, E., Loubet, B., Herrmann, B., Mattson, M., Schjoerring, J.K., Nemitz, 
 	Sutton, M.A., Cellier, P. (2009) SURFATM-NH3: a model combining the surface energy
 	balance and bi-directional exchanges of ammonia applied at the field scale. 
 	Biogeosciences,	6, 1371-1388.
-Stella, P., Personne, E., Loubet, B., Lamaud, E., Ceschia, E., Béziat, P., Bonnefond, J.M.,
+Stella, P., Personne, E., Loubet, B., Lamaud, E., Ceschia, E., BÃ©ziat, P., Bonnefond, J.M.,
 	Irvine, M., Keravec, P., Mascher, N., Cellier, P. (2011) Predicting and partioning
 	ozone fluxes to maize crops from sowing to harvest: the Surfatm-O3 model. Biogeosciences,
 	8, 2869-2886.
@@ -20,7 +50,7 @@ Stella, P., Personne, E., Lamaud, E., Loubet, B., Trebs, I., Cellier, P. (2013).
 	1-13, doi:10.1002/jgrg.20094.
 Lichiheb, N., Personne, E., Bedos, C., Barriuso, E., 2014. Adaptation of a resistive model to
 	pesticide volatilization from plants at the field scale: Comparison with a dataset. 
-	Atmospheric Environment 83, 260–268. https://doi.org/10.1016/j.atmosenv.2013.11.004
+	Atmospheric Environment 83, 260â€“268. https://doi.org/10.1016/j.atmosenv.2013.11.004
 Lichiheb, N., Bedos, C., Personne, E., Benoit, P., Bergheaud, V., Fanucci, O., Bouhlel, J., 
 	Barriuso, E., 2015. Measuring Leaf Penetration and Volatilization of Chlorothalonil and 
 	Epoxiconazole Applied on Wheat Leaves in a Laboratory-Scale Experiment. 
@@ -161,16 +191,16 @@ void main()
 				"FNH3_soil,FNH3_cut,FNH3_stom,FNH3_canopy,FNH3_tot,NH3_canopy,NH3_leaf,NH3_soil\n");
 			
 		else if (b == 2) // Reading the unit line--> no calculations
-			fprintf(output_file, "[GMT],[W.m-2],[W.m-2],[W.m-2],[W.m-2],[°C],[°C],[%],[m.s-1],[m2.m-2],[m2.m-2],[m],[m],[m],[m],[m],[mm],[µg.m-3],[µg.m-3],[µg.m-3],[µg.m-3],[-],[-],[s.m-1],"
+			fprintf(output_file, "[GMT],[W.m-2],[W.m-2],[W.m-2],[W.m-2],[Â°C],[Â°C],[%],[m.s-1],[m2.m-2],[m2.m-2],[m],[m],[m],[m],[m],[mm],[Âµg.m-3],[Âµg.m-3],[Âµg.m-3],[Âµg.m-3],[-],[-],[s.m-1],"
 				"[W.m-2],[W.m-2],[W.m-2],[W.m-2],[W.m-2],[W.m-2],[W.m-2],"
-				"[°C],[°C],[°C],[m.s-1],[m.s-1],[%],[%],[%],"
+				"[Â°C],[Â°C],[Â°C],[m.s-1],[m.s-1],[%],[%],[%],"
 				"[s.m-1],[s.m-1],[s.m-1],[s.m-1],[s.m-1],[s.m-1],"
 				"[m],"
 				"[m],[kg.kg-1],[kg.kg-1],[kg.kg-1],[mm],[mm],[mm],[MPa],[mm],[mm],"
 				"[m.s-1],[-],[-],[-],[-],[-],"
-				"[µg.m-2.s-1],[µg.m-2.s-1],[µg.m-2.s-1],[µg.m-2.s-1],[µg.m-2.s-1],[µg.m-2.s-1],[µg.m-3],[µg.m-3],"
-				"[µg.m-2.s-1],[µg.m-2.s-1],[µg.m-2.s-1],[µg.m-2.s-1],[µg.m-2.s-1],[µg.m-2.s-1],[µg.m-3],[µg.m-2],[µg.m-2],[µg.m-2],[µg.m-2],"
-				"[µg.m-2.s-1],[µg.m-2.s-1],[µg.m-2.s-1],[µg.m-2.s-1],[µg.m-2.s-1],[µg.m-3],[µg.m-3],[µg.m-3]\n");
+				"[Âµg.m-2.s-1],[Âµg.m-2.s-1],[Âµg.m-2.s-1],[Âµg.m-2.s-1],[Âµg.m-2.s-1],[Âµg.m-2.s-1],[Âµg.m-3],[Âµg.m-3],"
+				"[Âµg.m-2.s-1],[Âµg.m-2.s-1],[Âµg.m-2.s-1],[Âµg.m-2.s-1],[Âµg.m-2.s-1],[Âµg.m-2.s-1],[Âµg.m-3],[Âµg.m-2],[Âµg.m-2],[Âµg.m-2],[Âµg.m-2],"
+				"[Âµg.m-2.s-1],[Âµg.m-2.s-1],[Âµg.m-2.s-1],[Âµg.m-2.s-1],[Âµg.m-2.s-1],[Âµg.m-3],[Âµg.m-3],[Âµg.m-3]\n");
 		
 
 		else // Excecute Surfatm (3rd line of the input file, i.e., at the 1st line with data)
