@@ -1,22 +1,51 @@
+/*
+This file is part of SurfAtm software
+Copyright(c) 2023, â€“ UMR ECOSYS, AgroParisTech INRAe, France
+
+== GNU General Public License Usage ==
+
+SurfAtm is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+SurfAtm is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with SurfAtm. If not, see <http://www.gnu.org/licenses/>.
+
+== Other Usage ==
+Other Usage means a use of SurfAtm that is inconsistent with the GPL
+license, and requires a written agreement between You, AgroParisTech and INRAe.
+Licensees for Other Usage of SurfAtm may use this file in accordance
+with the terms contained in the written agreement between You, AgroParisTech and INRAe.
+*/
+/*
+@author Erwan Personne <erwan.personne@agroparistech.fr>
+@technical support : support.surfatm@agroparistech.fr
+*/
 
 
 /*-----------------Declarations of the constants and their values--------------*/
 
 #define M_PI			3.1415926535
-#define diffusivity_H2O_0C	2.178e-5		// H2O molecular diffusivity in air at 0°C and 1 atm	[m2/s] cf Massman (1998)
-#define diffusivity_O3_0C  1.444e-5			// O3 molecular diffusivity in air at 0°C and 1 atm		[m2/s] cf Massman (1998)
-#define diffusivity_NH3_0C  1.978e-5		// NH3 molecular diffusivity in air at 0°C and 1 atm	[m2/s] cf Massman (1998)
+#define diffusivity_H2O_0C	2.178e-5		// H2O molecular diffusivity in air at 0Â°C and 1 atm	[m2/s] cf Massman (1998)
+#define diffusivity_O3_0C  1.444e-5			// O3 molecular diffusivity in air at 0Â°C and 1 atm		[m2/s] cf Massman (1998)
+#define diffusivity_NH3_0C  1.978e-5		// NH3 molecular diffusivity in air at 0Â°C and 1 atm	[m2/s] cf Massman (1998)
 #define karman			0.41				// von Karman constant								[-]
 #define Prandt			0.72				// Prandt constant for air							[-]
-#define T0C				273.15				// Kelvin temperature at 0°C					    [°C]
+#define T0C				273.15				// Kelvin temperature at 0Â°C					    [Â°C]
 #define g				9.81				// Gravitational constant		                    [m/s2]
 #define rho_air			1.164				// Air density					                    [kg/m3]
 #define Cp_air			1010.0				// Air specific heat			                    [kJ/kg/K]
 #define R				8.318				// Perfect gaz constant								[Pa.m3.mol-1.K-1]
-#define PsychroCst		66.5				// psychrometric constant at 101.325kPa and 0°C		[Pa.k-1]
+#define PsychroCst		66.5				// psychrometric constant at 101.325kPa and 0Â°C		[Pa.k-1]
 #define	Viscosity_cin	1.56e-5				// Cinematic viscosity of air						[m2/s]
-#define KHenry25C_NH3	7.24e-4				// Henry constante de Henry at 25°C					[-]
-#define KAcidB25C_NH3  5.62e-7				// dissociation constante Acide Base at 25°C		[mol/m3]
+#define KHenry25C_NH3	7.24e-4				// Henry constante de Henry at 25Â°C					[-]
+#define KAcidB25C_NH3  5.62e-7				// dissociation constante Acide Base at 25Â°C		[mol/m3]
 #define enthalpVap_NH3  34.18e3				// free enthalpy for vaporization of NH3			[J/mol]
 #define enthalpAcidB_NH3  52.21e3			// free enthalpy fo acid-base dissociation			[J/mol]
 #define SIGMA			5.67e-8				// Stefan-Boltzmann Constant						[W.m-2.K-4]
@@ -91,10 +120,10 @@ RH_canopy,				// air relative humidity at the canopy level (above Rb_leaf)			[Pa
 ea,						// air vapor pressure at zref									[Pa]
 exa,					// air saturated vapor pressure at zref							[Pa]
 VPDa,					// Vapour pressure deficit of the air at zref					[Pa]
-T_leaf,					// Leaf surface temperature (below Rb_leaf)						[°C]
-T_soil,					// soil surface temperature										[°C]
-T_soilref,				// soil temperature at the deeply soil - ie, at "depth_soil_Tsoilref"	[°C]
-T_soilwetdry,			// soil temperature at the interface of wet and dry soil layers	[°C]
+T_leaf,					// Leaf surface temperature (below Rb_leaf)						[Â°C]
+T_soil,					// soil surface temperature										[Â°C]
+T_soilref,				// soil temperature at the deeply soil - ie, at "depth_soil_Tsoilref"	[Â°C]
+T_soilwetdry,			// soil temperature at the interface of wet and dry soil layers	[Â°C]
 ex_soilwetdry,			// air saturated vapor pressure at the interface of wet and dry soil layers [Pa]
 e_leaf,					// air vapor pressure at the leaf level (below Rb_leaf)			[Pa]
 ex_leaf,				// air saturated vapor pressure at the leaf level (below Rb_leaf)		[Pa]
@@ -107,59 +136,59 @@ LAI_yellow_efficient,	// Leaf area index of yellow leaves contributing to stomat
 zh,						// Canopy height												[m]
 canopy_cover,			// Fraction the soil surface covered by canopy (ground cover ratio)	[-]		
 
-concentration_O3,		// Ozone concentration at zref									[µg/m3]
+concentration_O3,		// Ozone concentration at zref									[Âµg/m3]
 Vd_O3,					// Ozone deposition velocity at zref							[cm/s]
 g_leaf_O3,				// Ozone deposition conductance of the leaf (cuticle + stomata) without Rb_leaf	[m/s]
 R_leaf_O3,				// Ozone deposition resistance of the leaf (cuticle + stomata) without Rb_leaf	[m/s]
 g_canopy_O3,			// Ozone deposition conductance of the leaf (cuticle + stomata) with Rb_leaf	[m/s]
 gcut_O3,				// Ozone cuticular deposition conductance						[m/s]
-FO3_tot,				// Total ozone flux at zref										[µg/m2/s]
-FO3_soil,				// Soil ozone flux												[µg/m2/s]
-FO3_stom,				// Ozone flux to green leaves									[µg/m2/s]
-FO3_stom_inactive,		// Ozone flux to yellow leaves									[µg/m2/s]
-FO3_cut,				// Cuticular ozone flux											[µg/m2/s]
-FO3_canopy,				// Ozone flux to canopy (stomata + cuticular)					[µg/m2/s]
-O3_canopy,				// Ozone concentration above the canopy (above Rb)				[µg/m3]
-O3_leaf,				// Ozone concentration near the leaves surface (below Rb)		[µg/m3]
+FO3_tot,				// Total ozone flux at zref										[Âµg/m2/s]
+FO3_soil,				// Soil ozone flux												[Âµg/m2/s]
+FO3_stom,				// Ozone flux to green leaves									[Âµg/m2/s]
+FO3_stom_inactive,		// Ozone flux to yellow leaves									[Âµg/m2/s]
+FO3_cut,				// Cuticular ozone flux											[Âµg/m2/s]
+FO3_canopy,				// Ozone flux to canopy (stomata + cuticular)					[Âµg/m2/s]
+O3_canopy,				// Ozone concentration above the canopy (above Rb)				[Âµg/m3]
+O3_leaf,				// Ozone concentration near the leaves surface (below Rb)		[Âµg/m3]
 
-concentration_Pest,		// Concentration of the studied pesticide at zref				[µg/m3]
+concentration_Pest,		// Concentration of the studied pesticide at zref				[Âµg/m3]
 Rstom_Pest,				// Green leaves stomatal resistance for studied pesticide		[s/m]
 Rstom_inactive_Pest,	// Yellow leaves stomatal resistance for studied pesticide		[s/m]
 Rb_soil_Pest,			// Soil boundary layer resistance for studied pesticide			[s/m]
 Rb_leaf_Pest,			// Canopy boundary layer resistance for studied pesticide		[s/m]
-FPest_soil,				// Soil flux of the studied pesticide							[µg/m2/s]
-FPest_canopy,			// Flux to canopy (stomata + cuticular)	 of the studied pesticide	[µg/m2/s]
-FPest_tot,				// Total vertical surface-atmosphere flux at zref of the studied pesticide					[µg/m2/s]
-FPest_washoff,			// Flux due to washoff process of the pesticid after a rain		[µg/m2/s]
-FPest_leaf_photodegrad_adsorb, // Flux due to photodegrad on the adsorbed pesticid on the leaves [µg/m2/s] 
-FPest_leaf_photodegrad_non_adsorb, // Flux due to photodegrad on the non-adsorbed pesticid on the leaves [µg/m2/s]
-FPest_leaf_penetration_adsorb, // Flux due to penetration of the pesticid located on the adsorbed layer on the leaves [µg/m2/s]
-FPest_leaf_penetration_non_adsorb, // Flux due to penetration of the pesticid located on the non-adsorbed layer on the leaves [µg/m2/s]
-FPest_leaf_dissip, // Flux due to dissipation of the pesticid contained inside the leaves [µg/m2/s]
-Pest_canopy,			// Pesticide concentration above the canopy (above Rb)			[µg/m3]
-Pest_leaf,				// Pesticide concentration near the leaves surface (below Rb)	[µg/m3]
-Pest_soil,				// Pesticide concentration at the soil surface (below Rb)		[µg/m3]
+FPest_soil,				// Soil flux of the studied pesticide							[Âµg/m2/s]
+FPest_canopy,			// Flux to canopy (stomata + cuticular)	 of the studied pesticide	[Âµg/m2/s]
+FPest_tot,				// Total vertical surface-atmosphere flux at zref of the studied pesticide					[Âµg/m2/s]
+FPest_washoff,			// Flux due to washoff process of the pesticid after a rain		[Âµg/m2/s]
+FPest_leaf_photodegrad_adsorb, // Flux due to photodegrad on the adsorbed pesticid on the leaves [Âµg/m2/s] 
+FPest_leaf_photodegrad_non_adsorb, // Flux due to photodegrad on the non-adsorbed pesticid on the leaves [Âµg/m2/s]
+FPest_leaf_penetration_adsorb, // Flux due to penetration of the pesticid located on the adsorbed layer on the leaves [Âµg/m2/s]
+FPest_leaf_penetration_non_adsorb, // Flux due to penetration of the pesticid located on the non-adsorbed layer on the leaves [Âµg/m2/s]
+FPest_leaf_dissip, // Flux due to dissipation of the pesticid contained inside the leaves [Âµg/m2/s]
+Pest_canopy,			// Pesticide concentration above the canopy (above Rb)			[Âµg/m3]
+Pest_leaf,				// Pesticide concentration near the leaves surface (below Rb)	[Âµg/m3]
+Pest_soil,				// Pesticide concentration at the soil surface (below Rb)		[Âµg/m3]
 Sc_Pest,				// Schmidt number for studied pesticide							[-]
-Pest_quantity_leaf,		// Quantity of pesticide of the leaf (inside + on the leaves) 	[µg/m2]
-Pest_quantity_leaf_adsorb, // Quantity of pesticide adsorbed on the leaf surface and non volatilizable [µg/m2]
-Pest_quantity_leaf_non_adsorb, // Quantity of pesticide non adsorbed on the leaf surface and available for volatilization [µg/m2]
-Pest_quantity_leaf_Tissue, // Quantity of pesticide penetrated in the plant tissue		[µg/m2]
-Pest_quantity_soil,		// Quantity of pesticide on the soil							[µg/m2]
+Pest_quantity_leaf,		// Quantity of pesticide of the leaf (inside + on the leaves) 	[Âµg/m2]
+Pest_quantity_leaf_adsorb, // Quantity of pesticide adsorbed on the leaf surface and non volatilizable [Âµg/m2]
+Pest_quantity_leaf_non_adsorb, // Quantity of pesticide non adsorbed on the leaf surface and available for volatilization [Âµg/m2]
+Pest_quantity_leaf_Tissue, // Quantity of pesticide penetrated in the plant tissue		[Âµg/m2]
+Pest_quantity_soil,		// Quantity of pesticide on the soil							[Âµg/m2]
 ex_Pest,				// Saturated vapor pressure of the studied pesticide			[Pa]
 K_photodegrad_Pest,		// photodegradation rate of the Pesticid						[s-1]
 K_penetration_Pest,		// coeeficient for penetration of the pesticide in the plant tissue [s-1]
 
-concentration_NH3,		// Concentration of NH3 at zref									[µg/m3]
-NH3_canopy,				// NH3 concenrtation above the canopy (above Rb)				[µg/m3]
-NH3_i,					// NH3 concentration inside the substomatal cavity				[µg/m3]
-NH3_soil,				// NH3 concentration in the soil (in the wet soil layer)		[µg/m3]
-NH3_leaf,				// NH3concentration near the leaves surface (below Rb)			[µg/m3]
-FNH3_tot,				// Total NH3 flux at zref										[µg/m2/s]
-FNH3_soil,				// Soil NH3 flux												[µg/m2/s]
-FNH3_stom,				// NH3 flux to green leaves										[µg/m2/s]
-FNH3_stom_inactive,		// NH3 flux to yellow leaves									[µg/m2/s]
-FNH3_cut,				// Cuticular NH3 flux											[µg/m2/s]
-FNH3_canopy,			// NH3 flux to canopy (stomata + cuticular)						[µg/m2/s]
+concentration_NH3,		// Concentration of NH3 at zref									[Âµg/m3]
+NH3_canopy,				// NH3 concenrtation above the canopy (above Rb)				[Âµg/m3]
+NH3_i,					// NH3 concentration inside the substomatal cavity				[Âµg/m3]
+NH3_soil,				// NH3 concentration in the soil (in the wet soil layer)		[Âµg/m3]
+NH3_leaf,				// NH3concentration near the leaves surface (below Rb)			[Âµg/m3]
+FNH3_tot,				// Total NH3 flux at zref										[Âµg/m2/s]
+FNH3_soil,				// Soil NH3 flux												[Âµg/m2/s]
+FNH3_stom,				// NH3 flux to green leaves										[Âµg/m2/s]
+FNH3_stom_inactive,		// NH3 flux to yellow leaves									[Âµg/m2/s]
+FNH3_cut,				// Cuticular NH3 flux											[Âµg/m2/s]
+FNH3_canopy,			// NH3 flux to canopy (stomata + cuticular)						[Âµg/m2/s]
 GammaLeaf_NH3,			// NH3 emission potentiel for the leaf given by [NH4+]/[H+]		[-]
 GammaSoil_NH3,			// NH3 emission potentiel for the soil given by [NH4+]/[H+]		[-]
 
@@ -170,15 +199,15 @@ uh,						// Wind speed at the top of the canopy							[m/s]
 lf,						// characteristic length of the leaves							[m]
 Keh,					// Eddy diffusivity at the topp of the canopy					[/s]
 L_MO,					// Monin-Obukhov length											[m]
-Ta,						// Air temperature at zref										[°C]
-T_canopy,				// Air temperature above the canopy (above Rb_leaf)				[°C]
+Ta,						// Air temperature at zref										[Â°C]
+T_canopy,				// Air temperature above the canopy (above Rb_leaf)				[Â°C]
 Zeta,					// (z-d)/L														[-]
 x,						// Variable for stability calculations							[-]
 PsiM,					// Integrated stability function for momentum					[-]
 PsiH,					// Integrated stability function for heat						[-]
 diff_Ra,				// Ra in neutral condition - Ra corrected for stability			[s/m]
 glight,					// Response function of gstom to light							[-]
-PAR,					// Photosynthetic Active Radiation								[µmol/m2/s]
+PAR,					// Photosynthetic Active Radiation								[Âµmol/m2/s]
 gtemp,					// Response function of gstom to temperature					[-]				
 gVPD,					// Response function of gstom to VPD							[-]
 SWP,					// Soil Water Potential											[MPa]
@@ -238,7 +267,7 @@ Cumul_evap_t3			// Cumulated evaporation during the last 3 timesteps				[mm]
 
 
 
-/*-----------------Déclaration des paramètres--------------*/
+/*-----------------DÃ©claration des paramÃ¨tres--------------*/
 
 	double
 		ksoil_O3,					// Empirical coefficient to calculate Rsoil_O3					[-]
@@ -252,7 +281,7 @@ Cumul_evap_t3			// Cumulated evaporation during the last 3 timesteps				[mm]
 		ex_Pest_Tref,				// Saturated vapor pressure of the studied pesticide at Tref	[Pa]
 		diffusivity_Pest,			// Molecular diffusivity in air of the studied pesticide		[m2/s]
 		KH_Pest_Tref,				// Henry Constant at Tref										[-]
-		Tref_Pest,					// Reference Temperature for KH and ex Values					[°C]
+		Tref_Pest,					// Reference Temperature for KH and ex Values					[Â°C]
 		Molar_mass_Pest,			// Molar mass of the studied Pesticide							[g.mol-1]
 		Solub_Water_Pest,			// Pesticid Solubility in water									[g.L-1]
 		Solub_Octanol_Pest,			// Pesticid Solubility in octanol								[-]
@@ -261,8 +290,8 @@ Cumul_evap_t3			// Cumulated evaporation during the last 3 timesteps				[mm]
 		K_washoff_Pest,				// constant for washoff process of the pesticid after a rain	[mm-1]
 		K_leaf_dissip_Pest,			// dissipation/degradation constant of the pesticid after penetration in the cuticle [s-1]
 		K_stom_absorption_Pest,		// coefficient to estimate stomatal resistance to pesticide	: 1 = normal stomatal flux || +inf = no stomatal flux	[-]
-		Lambda_Pest,				// coefficient related of the covering of the leaf by one layer of molecule of the pesticide. Usually equal to 1 kg/ha [µg.m-2]
-		Pest_quantity_applied,		// Quantity of pesticide applied at the time of application		[µg/m2]
+		Lambda_Pest,				// coefficient related of the covering of the leaf by one layer of molecule of the pesticide. Usually equal to 1 kg/ha [Âµg.m-2]
+		Pest_quantity_applied,		// Quantity of pesticide applied at the time of application		[Âµg/m2]
 		Rcut_Pest,					// Cuticular resistance of the studied pesticide				[s/m]
 
 		zref,						// Reference or measurement height								[m]
@@ -275,9 +304,9 @@ Cumul_evap_t3			// Cumulated evaporation during the last 3 timesteps				[mm]
 		gmax,						// Maximal vegetation stomatal conductance for H2O				[mmol_H2O/m2/s]
 		gmin,						// Minimal stomatal conductance coefficient						[-]
 		alphaglight,				// Coefficient of gstom response to light						[-]
-		Tmin,						// Minimum temperature for stomata opening						[°C]
-		Topt,						// Temperature for maximum stomata opening						[°C]
-		Tmax,						// Maximum temperature for stomata closure						[°C]
+		Tmin,						// Minimum temperature for stomata opening						[Â°C]
+		Topt,						// Temperature for maximum stomata opening						[Â°C]
+		Tmax,						// Maximum temperature for stomata closure						[Â°C]
 		VPDmax,						// VPD below which stomata opening is maximum					[kPa]
 		VPDmin,						// VPD above which stomata opening is minimum					[kPa]
 		SWPmax,						// SWP below which stomata opening is minimum					[MPa]
@@ -322,11 +351,11 @@ Cumul_evap_t3			// Cumulated evaporation during the last 3 timesteps				[mm]
 		Pprime1, Pprime2, Pprime3,		// 
 		etha, coeffnu, Gamma1, Gamma2,
 		intermediatetemperature, 
-		critStab,					// threshold for iterative convergence of Energy balance closure focused on T° - [°C]
+		critStab,					// threshold for iterative convergence of Energy balance closure focused on TÂ° - [Â°C]
 		critmaxStab,				// number of the maximum iteration for the iterative process (energy balance)	 [-] 
 		critPprime,					
 		critmaxPprime,
-		critmaxRn					// acceptability threshold for the calculation of the net radiation in the iterative process (in case of net radiation calculation) - focused on T° [°C]  
+		critmaxRn					// acceptability threshold for the calculation of the net radiation in the iterative process (in case of net radiation calculation) - focused on TÂ° [Â°C]  
 		;
 
 	int
