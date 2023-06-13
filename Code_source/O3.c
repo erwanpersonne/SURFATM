@@ -1,3 +1,33 @@
+/*
+This file is part of SurfAtm software
+Copyright(c) 2023, â€“ UMR ECOSYS, AgroParisTech INRAe, France
+
+== GNU General Public License Usage ==
+
+SurfAtm is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+SurfAtm is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with SurfAtm. If not, see <http://www.gnu.org/licenses/>.
+
+== Other Usage ==
+Other Usage means a use of SurfAtm that is inconsistent with the GPL
+license, and requires a written agreement between You, AgroParisTech and INRAe.
+Licensees for Other Usage of SurfAtm may use this file in accordance
+with the terms contained in the written agreement between You, AgroParisTech and INRAe.
+*/
+/*
+@author Erwan Personne <erwan.personne@agroparistech.fr>
+@technical support : support.surfatm@agroparistech.fr
+*/
+
 /*----------Program for O3 flux calculations--------
 
 References:
@@ -8,12 +38,12 @@ Lamaud, E., Loubet, B., Irvine, M., Stella, P., Personne, E., Cellier, P.
 Stella, P., Lamaud, E., Loubet, B., Laville, P, Cellier, P. (2011) Ozone
 	deposition onto bare soil: A new parameterisation. Agricultural and Forest
 	Meteorology, 151, 669-681.
-Stella, P., Personne, E., Loubet, B., Lamaud, E., Ceschia, E., Béziat, P.,
+Stella, P., Personne, E., Loubet, B., Lamaud, E., Ceschia, E., BÃ©ziat, P.,
 	Bonnefond, J.M., Irvine, M., Keravec, P., Mascher, N., Cellier, P., 2011.
 	Predicting and partitioning ozone fluxes to maize crops from sowing to harverst:
 	the SURFATM-O3 model. Biogeosciences, 8, 2869-2886.
 Stella, P., Loubet, B., de Berranger, C., Charrier, X., Ceschia, E., Gerosa, G., 
-	Finco, A., Lamaud, E., Serça, D., George, C., Ciuraru, R. (2019) Soil ozone 
+	Finco, A., Lamaud, E., SerÃ§a, D., George, C., Ciuraru, R. (2019) Soil ozone 
 	deposition: Dependence of soil resistance to soil texture. Atmospheric Environnemnt,
 	199, 202-209.
 */
