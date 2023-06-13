@@ -1,3 +1,33 @@
+/*
+This file is part of SurfAtm software
+Copyright(c) 2023, â€“ UMR ECOSYS, AgroParisTech INRAe, France
+
+== GNU General Public License Usage ==
+
+SurfAtm is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+SurfAtm is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with SurfAtm. If not, see <http://www.gnu.org/licenses/>.
+
+== Other Usage ==
+Other Usage means a use of SurfAtm that is inconsistent with the GPL
+license, and requires a written agreement between You, AgroParisTech and INRAe.
+Licensees for Other Usage of SurfAtm may use this file in accordance
+with the terms contained in the written agreement between You, AgroParisTech and INRAe.
+*/
+/*
+@author Erwan Personne <erwan.personne@agroparistech.fr>
+@technical support : support.surfatm@agroparistech.fr
+*/
+
 /*----------Program for NH3 flux calculations--------
 
 References:
@@ -73,10 +103,10 @@ void NH3_compensation_caluculation()
 
 
 	KhilNH3 = KHenry25C_NH3 * KAcidB25C_NH3 * exp((enthalpAcidB_NH3 + enthalpVap_NH3) / R*(1.0 / 298.15 - (1.0 / (T_leaf+T0C)))) * GammaLeaf_NH3; //compensation point in the substomatal cavity [mol /m3]
-	KhilNH3 = KhilNH3 * 17.e-3 *1.e9;																												// Conversion in µg/m3
+	KhilNH3 = KhilNH3 * 17.e-3 *1.e9;																												// Conversion in Âµg/m3
 	
 	KhiSNH3 = KHenry25C_NH3 * KAcidB25C_NH3 * exp((enthalpAcidB_NH3 + enthalpVap_NH3) / R*(1.0 / 298.15 - (1.0 / (T_soilwetdry +T0C)))) * GammaSoil_NH3; // compensation point in the wet soil layer [mol /m3]
-	KhiSNH3 = KhiSNH3 * 17.e-3 *1.e9;                                                                                                 // Conversion in µg/m3
+	KhiSNH3 = KhiSNH3 * 17.e-3 *1.e9;                                                                                                 // Conversion in Âµg/m3
 	
 	NH3_i = KhilNH3;
 	NH3_soil = KhiSNH3;
