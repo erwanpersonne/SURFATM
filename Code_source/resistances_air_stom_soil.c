@@ -1,3 +1,33 @@
+/*
+This file is part of SurfAtm software
+Copyright(c) 2023, â€“ UMR ECOSYS, AgroParisTech INRAe, France
+
+== GNU General Public License Usage ==
+
+SurfAtm is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+SurfAtm is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with SurfAtm. If not, see <http://www.gnu.org/licenses/>.
+
+== Other Usage ==
+Other Usage means a use of SurfAtm that is inconsistent with the GPL
+license, and requires a written agreement between You, AgroParisTech and INRAe.
+Licensees for Other Usage of SurfAtm may use this file in accordance
+with the terms contained in the written agreement between You, AgroParisTech and INRAe.
+*/
+/*
+@author Erwan Personne <erwan.personne@agroparistech.fr>
+@technical support : support.surfatm@agroparistech.fr
+*/
+
 /*----------Program for calculation of air, stomatal and soil resistances--------
 
 The resistances calculated here only concern the transfers of heat, 
@@ -12,7 +42,7 @@ Thom, A.S. (1975) Momentum, mass and heat exchange of plant communities. In: J.L
 	Monteith (Editor), Vegetation and the atmosphere. Academic Press, New York, pp. 57-109.
 Choudhury, B.J., Monteith, J.L. (1988) A four-layer model for the heat budget of homogeneous
 	land surfaces, Quarterly Journal of the Royal Meteorological Society, 114, 373-398.
-Lagouarde, J.-P., et al. (1995) Le bilan d'énergie d'un couvert végétal,In: INRA (Editor),
+Lagouarde, J.-P., et al. (1995) Le bilan d'Ã©nergie d'un couvert vÃ©gÃ©tal,In: INRA (Editor),
 	Actes de l'Ecole-Chercheurs INRA en bioclimatologie, pp. 383-404.
 Emberson, L.D., Simpson, D., Tuovinen, J.P., Ashomore, M.R., Cambridge, H.M. (2000)
 	Towards a model of ozone deposition and stomatal uptake over Europe. EMEP, Research
@@ -28,17 +58,17 @@ Zhou, M.C., Ishidaira; H., Hapuarachchi, H.P., Magome, J., Kiem, A.S., Takeuchi,
 	Estimating potential evapotranspiration using Shuttleworth-Wallace model and
 	NOAA-AVHRR NDVI data to feed a distributed hydrological model over the Mekong River
 	Basin. Journal of Hydrology, 327, 151-173.
-Stella, P., Personne, E., Loubet, B., Lamaud, E., Ceschia, E., Béziat, P.,
+Stella, P., Personne, E., Loubet, B., Lamaud, E., Ceschia, E., BÃ©ziat, P.,
 	Bonnefond, J.M., Irvine, M., Keravec, P., Mascher, N., Cellier, P. (2011)
 	Predicting and partitioning ozone fluxes to maize crops from sowing to harverst:
 	the SURFATM-O3 model. Biogeosciences, 8, 2869-2886.
-Rochette, P., Pattey, E., Desjardins, R.L., Dwyer, L.M., Stewart, D.W., Dubé, P.A.
+Rochette, P., Pattey, E., Desjardins, R.L., Dwyer, L.M., Stewart, D.W., DubÃ©, P.A.
 	(1991) Estimation of maize (Zea mays L.) canopy conductance by scaling up leaf
-	stomatal conductance, Agricultural and Forest Meteorology, 54, 241–261.
+	stomatal conductance, Agricultural and Forest Meteorology, 54, 241â€“261.
 J. Farahani, H., R. Ahuja, L., 1996. Evapotranspiration Modeling of Partial Canopy/Residue-covered Fields.
-	Transactions of the ASAE 39, 2051–2064. https://doi.org/10.13031/2013.27708
+	Transactions of the ASAE 39, 2051â€“2064. https://doi.org/10.13031/2013.27708
 Griend, A.A. van de, Owe, M., 1994. Bare soil surface resistance to evaporation by vapor diffusion under semiarid conditions.
-	Water Resources Research 30, 181–188. https://doi.org/10.1029/93WR02747
+	Water Resources Research 30, 181â€“188. https://doi.org/10.1029/93WR02747
 
 */
 
