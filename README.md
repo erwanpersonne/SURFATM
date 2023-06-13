@@ -16,7 +16,7 @@ It is necessary to set up a "Source_code", a "data" and an "output" folder at th
 ../output
 
 
-The data folder contains all simulation parameters.
+The data folder contains all simulation parameters and variables.
 
 
 
@@ -32,3 +32,9 @@ The github download includes a folder for installation with Microsoft Visual Stu
 
 This download is not necessary. 
 It facilitates installation for this environment (Visual M. 2022).
+
+**Bibliography**
+
+Personne, E., et al. (2009) SURFATM-NH3: a model combining the surface energy balance and bi-directional exchanges of ammonia applied at the field scale. Biogeosciences, 6, 1371-1388, doi: 10.5194/bg-6-1371-2009.
+
+Stella, P., et al. (2011) Predicting and partitioning ozone fluxes to maize crops from sowing to harvest: the Surfatm-O3 model. Biogeosciences, 8, 2869-2886, doi: 10.5194/bg-8-2869-2011.
